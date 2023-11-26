@@ -1,6 +1,7 @@
 import TypewriterTitle from '@/components/TypewriterTitle'
 import { Button } from '@/components/ui/button'
-import { UserButton } from '@clerk/nextjs'
+import { ArrowBigRight } from 'lucide-react'
+import Link from 'next/link'
 
 export default function Home() {
   return (
@@ -13,6 +14,14 @@ export default function Home() {
         <h2 className="font-semibold text-3xl text-center text-slate-700">
           <TypewriterTitle></TypewriterTitle>
         </h2>
+        <div className="mt-8">
+          <Link href="/dashboard">
+            <Button className="bg-blue-600">
+              Dashboard
+              <ArrowBigRight className="inline-block ml-2" />
+            </Button>
+          </Link>
+        </div>
       </div>
     </div>
   )
