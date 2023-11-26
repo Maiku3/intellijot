@@ -17,7 +17,10 @@ export default function Home() {
         <div className='mt-8'>
           <div className="flex justify-center">
             <Link href="/dashboard">
-              <Button className="bg-blue-600">Dashboard<ArrowBigRight className="inline-block ml-2" /></Button>
+              <Button className="bg-blue-600">
+                Dashboard
+                <ArrowBigRight className="h-5 w-5 mr-1" />
+              </Button>
             </Link>
           </div>
         </div>
