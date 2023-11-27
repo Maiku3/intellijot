@@ -8,6 +8,7 @@ import { Button } from './ui/button'
 type Props = {}
 
 const NewNoteDialog = (props: Props) => {
+  const [input, setInput] = React.useState('')
   return (
     <Dialog>
       <DialogTrigger>
@@ -28,7 +29,7 @@ const NewNoteDialog = (props: Props) => {
           </DialogDescription>
         </DialogHeader>
         <form>
-          <Input placeholder='Enter new note name...' />
+          <Input value={input} onChange={e => setInput(e.target.value)} placeholder='Enter new note name...' />
           <div className="h-4"></div>
           <div className="flex items-center gap-3">
             <Button type="reset" variant={"secondary"}>
