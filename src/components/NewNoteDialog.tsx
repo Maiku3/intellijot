@@ -1,14 +1,19 @@
-'use client'
-import React from 'react'
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog'
-import { Plus } from 'lucide-react'
-import { Input } from './ui/input'
-import { Button } from './ui/button'
+'use client';
+import React from 'react';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
+import { Plus } from 'lucide-react';
+import { Input } from './ui/input';
+import { Button } from './ui/button';
 
 type Props = {}
 
 const NewNoteDialog = (props: Props) => {
-  const [input, setInput] = React.useState('')
+  const [input, setInput] = React.useState('');
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log(input);
+  }
+
   return (
     <Dialog>
       <DialogTrigger>
@@ -28,7 +33,7 @@ const NewNoteDialog = (props: Props) => {
             Create a new note by clicking the button below.
           </DialogDescription>
         </DialogHeader>
-        <form>
+        <form onSubmit={handleSubmit}>
           <Input value={input} onChange={e => setInput(e.target.value)} placeholder='Enter new note name...' />
           <div className="h-4"></div>
           <div className="flex items-center gap-3">
