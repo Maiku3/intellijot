@@ -4,14 +4,37 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import { Plus } from 'lucide-react';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
+import { useMutation } from '@tanstack/react-query';
+import axios from 'axios';
 
 type Props = {}
 
 const NewNoteDialog = (props: Props) => {
   const [input, setInput] = React.useState('');
+  const createNote = useMutation({
+    mutationFn: async () => {
+      const res = await axios.post('/api/newNote', {
+        name: input
+      });
+      return res.data
+    }
+  });
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log(input);
+    if (input === '') {
+      window.alert('Please enter a name for your note.');
+
+      return;
+    }
+    createNote.mutate(undefined, {
+      onSuccess: () => {
+        console.log('Successfully created note.');
+      },
+      onError: (err) => {
+        console.error(err);
+      }
+    });
   }
 
   return (
