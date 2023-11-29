@@ -1,11 +1,10 @@
-import {Configuration, OpenAIApi} from 'openai-edge';
+import { Configuration, OpenAIApi } from 'openai-edge';
 
 const config = new Configuration({
-    apiKey: process.env.OPENAI_API_KEY
+    apiKey: process.env.OPENAI_API_KEY,
 });
 
-const openai = new OpenAIApi(config)
-
+const openai = new OpenAIApi(config);
 
 export async function generateImagePrompt(noteName: string) {
     try {
@@ -31,6 +30,17 @@ export async function generateImagePrompt(noteName: string) {
     }
 }
 
-export async function generateImage() {
-
+export async function generateImage(image_prompt: string) {
+    try {
+        const response = await openai.createImage({
+            prompt: image_prompt,
+            n: 1,
+            size: '256x256'
+        });
+        const data = await response.json();
+        const image_url = data.data[0].url;
+        return image_url as string;
+    } catch (error) {
+        console.error(error);
+    }
 }
