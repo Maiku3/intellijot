@@ -1,15 +1,17 @@
 'use client';
 import React from 'react';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from './ui/dialog';
-import { Plus } from 'lucide-react';
+import { Loader2, Plus } from 'lucide-react';
 import { Input } from './ui/input';
 import { Button } from './ui/button';
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
+import {useRouter} from 'next/navigation'
 
 type Props = {}
 
 const NewNoteDialog = (props: Props) => {
+  const router = useRouter();
   const [input, setInput] = React.useState('');
   const createNote = useMutation({
     mutationFn: async () => {
@@ -30,9 +32,11 @@ const NewNoteDialog = (props: Props) => {
     createNote.mutate(undefined, {
       onSuccess: ({note_id}) => {
         console.log('Successfully created new note:', {note_id});
+        router.push(`/notebook/${note_id}`);
       },
       onError: (err) => {
         console.error(err);
+        window.alert('An error occurred while creating your note. Please try again.');
       }
     });
   }
@@ -63,7 +67,10 @@ const NewNoteDialog = (props: Props) => {
             <Button type="reset" variant={"secondary"}>
               Cancel
             </Button>
-            <Button type="submit" className="bg-blue-600">
+            <Button type="submit" className="bg-blue-600" disabled={createNote.isPending}>
+            {createNote.isPending && (
+                <Loader2 className="w-4 h-4 mr-2 animate-spin" />
+              )}
               Create Note
             </Button>
           </div>
