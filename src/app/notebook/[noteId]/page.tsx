@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import { clerk } from '@/lib/clerk-server'
 import { db } from '@/lib/db'
 import { $notes } from '@/lib/db/schema'
 import { auth } from '@clerk/nextjs'
@@ -20,6 +21,7 @@ const NotebookPage = async ({params: {noteId}}: Props) => {
         return redirect(('/dashboard'));
     }
 
+    const user = clerk.users.getUser(userId);
     // Fetch the note from the database
     const notes = await db.select().from($notes).where(and(eq($notes.id, parseInt(noteId)),eq($notes.userId, userId)))
 
