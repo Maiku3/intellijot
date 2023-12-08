@@ -37,6 +37,12 @@ const NotebookPage = async ({params: {noteId}}: Props) => {
             <Link href={'/dashboard'}>
                 <Button className='bg-blue-600'size='sm'>Back</Button>
             </Link>
+                <div className="w-3"></div>
+                <span className='font-semibold'>
+                    {(await user).firstName} {(await user).lastName}
+                </span>
+                <span className='inline-block mx-1'>/</span>
+                <span className='text-stone-500 font-semibold'>{note.name}</span>
             </div>
         </div>
     </div>
