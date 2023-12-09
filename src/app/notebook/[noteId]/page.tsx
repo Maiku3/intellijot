@@ -1,3 +1,4 @@
+import TipTapEditor from '@/components/TipTapEditor'
 import { Button } from '@/components/ui/button'
 import { clerk } from '@/lib/clerk-server'
 import { db } from '@/lib/db'
@@ -21,13 +22,18 @@ const NotebookPage = async ({params: {noteId}}: Props) => {
         return redirect(('/dashboard'));
     }
 
+    // Fetch the user from Clerk
     const user = clerk.users.getUser(userId);
+
     // Fetch the note from the database
     const notes = await db.select().from($notes).where(and(eq($notes.id, parseInt(noteId)),eq($notes.userId, userId)))
 
+    // If the note doesn't exist, redirect to the dashboard
     if (notes.length === 0) {
         return redirect('/dashboard');
     }
+
+    // Get the first and only note
     const note = notes[0];
 
   return (
@@ -45,10 +51,9 @@ const NotebookPage = async ({params: {noteId}}: Props) => {
                 <span className='text-stone-500 font-semibold'>{note.name}</span>
                 <div className="ml-auto">DELETE</div>
             </div>
-
             <div className="h-4"></div>
             <div className='border-stone-200 shadow-xl border rounded-lg px-16 py-8 w-full'>
-
+                <TipTapEditor />
             </div>
         </div>
     </div>
