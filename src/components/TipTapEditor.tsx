@@ -4,6 +4,7 @@ import {Editor, EditorContent, useEditor} from '@tiptap/react'
 import {StarterKit} from '@tiptap/starter-kit'
 import TipTapToolbar from './TipTapToolbar';
 import { Button } from './ui/button';
+import { useDebounce } from '@/lib/useDebounce';
 
 type Props = {}
 
@@ -18,13 +19,16 @@ const TipTapEditor = (props: Props) => {
             setEditorState(editor.getHTML())
         },
     });
+
+    const debouncedEditorState = useDebounce(editorState, 500);
+
   return (
     <>
         <div className="flex">
             {editor && <TipTapToolbar editor={editor} />}
             <Button className='bg-blue-600' size='sm'>Save</Button>
         </div>
-        <div>
+        <div className='prose'>
             <EditorContent editor={editor} />
         </div>
     </>
