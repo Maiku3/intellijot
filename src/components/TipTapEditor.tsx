@@ -8,6 +8,7 @@ import { useDebounce } from '@/lib/useDebounce';
 import { useMutation } from '@tanstack/react-query';
 import axios from 'axios';
 import { NoteType } from '@/lib/db/schema';
+import {Text} from '@tiptap/extension-text'
 
 type Props = {note: NoteType}
 
@@ -18,11 +19,20 @@ const TipTapEditor = ({ note }: Props) => {
             const response = await axios.post('/api/saveNote', {noteId: note.id, editorState});
             return response.data;
         }
-    
-    })
+    });
+    const customText = Text.extend({
+        addKeyboardShortcuts() {
+            return {
+                'Shift-a': () => {
+                    console.log('Shift-a');
+                    return true;
+                },
+            }
+        },
+    });
     const editor = useEditor({
         autofocus: true,
-        extensions: [StarterKit],
+        extensions: [StarterKit, customText],
         content: editorState,
         onUpdate: ({editor}) => {
             setEditorState(editor.getHTML());
