@@ -77,9 +77,15 @@ const TipTapEditor = ({ note }: Props) => {
                 {saveNote.isPending ? 'Saving...' : 'Saved'}
             </Button>
         </div>
-        <div className='prose'>
+        <div className='prose prose-sm w-full mt-3'>
             <EditorContent editor={editor} />
         </div>
+        <div className="h-4"></div>
+        <span className='text-sm'>
+            <span >
+                Shortcut: Press <kbd className='px-2 py-1.5 text-xs text-gray-700 font-semibold bg-gray-100 border border-gray-200 rounded-lg'>Shift + A</kbd> to use AI autocomplete
+            </span>
+        </span>
     </>
   )
 }
