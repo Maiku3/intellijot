@@ -46,11 +46,14 @@ const TipTapEditor = ({ note }: Props) => {
         });
         console.log('debouncedEditorState', debouncedEditorState);
     }, [debouncedEditorState]);
+
   return (
     <>
         <div className="flex">
             {editor && <TipTapToolbar editor={editor} />}
-            <Button className='bg-blue-600' size='sm'>Save</Button>
+            <Button disabled variant={'outline'} className='bg-blue-600' size='sm'>
+                {saveNote.isPending ? 'Saving...' : 'Saved'}
+            </Button>
         </div>
         <div className='prose'>
             <EditorContent editor={editor} />
