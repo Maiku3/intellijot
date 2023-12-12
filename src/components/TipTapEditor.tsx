@@ -12,7 +12,7 @@ import { NoteType } from '@/lib/db/schema';
 type Props = {note: NoteType}
 
 const TipTapEditor = ({ note }: Props) => {
-    const [editorState, setEditorState] = React.useState('');
+    const [editorState, setEditorState] = React.useState(note.editorState || "");
     const saveNote = useMutation({
         mutationFn: async() => {
             const response = await axios.post('/api/saveNote', {noteId: note.id, editorState});
@@ -44,7 +44,6 @@ const TipTapEditor = ({ note }: Props) => {
             }
         
         });
-        console.log('debouncedEditorState', debouncedEditorState);
     }, [debouncedEditorState]);
 
   return (
