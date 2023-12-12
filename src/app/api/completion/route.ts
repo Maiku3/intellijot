@@ -17,11 +17,11 @@ export async function POST(req: Request) {
     messages: [
         {
             role:'system',
-            content:'You are a helpful and smart AI in a note taking app that helps users autocomplete their sentences.',
+            content:'You are a helpful and smart AI in a note taking app that helps users complete their sentences. Only give them what would come after what they have written. Do not give them the beginning of their sentence.',
         },
         {
             role: 'user',
-            content: `I am writing notes in my note taking app. Help me complete my train of thought here: ##${prompt}## keep the tone of text the same.`
+            content: `I am writing notes in my note taking app. Help me complete my train of thought here: ##${prompt}##`
         }
     ],
     stream: true,
