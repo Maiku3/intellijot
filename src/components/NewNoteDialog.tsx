@@ -32,6 +32,8 @@ const NewNoteDialog = (props: Props) => {
     createNote.mutate(undefined, {
       onSuccess: ({note_id}) => {
         console.log('Successfully created new note:', {note_id});
+        // Upload temporary image url to firebase storage
+        
         router.push(`/notebook/${note_id}`);
       },
       onError: (err) => {
