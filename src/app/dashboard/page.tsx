@@ -9,6 +9,7 @@ import { db } from '@/lib/db'
 import { $notes } from '@/lib/db/schema'
 import { eq } from 'drizzle-orm'
 import { date } from 'drizzle-orm/mysql-core'
+import Image from 'next/image'
 
 type Props = {}
 
@@ -47,9 +48,9 @@ const DashboardPage = async (props: Props) => {
             <NewNoteDialog />
             {notes.map(note => {
                 return (
-                    <a href={`/notes/${note.id}`} key={note.id}>
+                    <a href={`/notebook/${note.id}`} key={note.id}>
                         <div className="border border-stone-200 overflow-hidden rounded-lg flex flex-col hover:shadow-xl transition hover:-translate-y-1">
-                            <img width={400} height={400} alt={note.name} src={note.imageUrl || ''} className="object-cover" />
+                            <Image width={400} height={400} alt={note.name} src={note.imageUrl || ''} className="object-cover" />
                             <div className="p-4">
                                 <h3 className='text-lg font-semibold text-gray-800'>{note.name}</h3>
                                 <div className="h-1"></div>
