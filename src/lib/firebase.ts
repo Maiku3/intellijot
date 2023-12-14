@@ -18,11 +18,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 export const storage = getStorage(app);
 
-export async function uploadImageToFirebase(image_url: string, name: string) {
+export async function uploadImageToFirebase(image_url: string, name: string, note_id: string) {
     try {
         const response = await fetch(image_url)
         const buffer = await response.arrayBuffer()
-        const file_name = `${name.replace(/\s/g, '')}_${Date.now}.jpeg`;
+        const file_name = name.replace(" ", "") + note_id + ".jpeg";
         const storageRef = ref(storage, `images/${file_name}`);
         await uploadBytes(storageRef, buffer, {contentType: 'image/jpeg'})
 

@@ -13,7 +13,7 @@ export async function generateImagePrompt(noteName: string) {
             messages: [
                 {
                     role: "system",
-                    content: `You are a creative prompt engineer that writes image prompts for the DALLE AI to generate images that is used as a thumbnail for a notebook. `,
+                    content: `You will now act as a image prompt generator for the DALLE AI to generate an image.`,
                 },
                 {
                     role: "user",

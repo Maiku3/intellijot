@@ -13,7 +13,7 @@ export async function POST(req: Request) {
             return new NextResponse('No image found', {status: 404})
         }
 
-        const firebase_url = await uploadImageToFirebase(note[0].imageUrl, note[0].name)
+        const firebase_url = await uploadImageToFirebase(note[0].imageUrl, note[0].name, note[0].id.toString())
         await db.update($notes).set({
             imageUrl: firebase_url
         }).where(eq($notes.id, parseInt(noteId)))
