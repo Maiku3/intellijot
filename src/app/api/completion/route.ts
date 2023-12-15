@@ -21,7 +21,7 @@ export async function POST(req: Request) {
         },
         {
             role: 'user',
-            content: `I am writing notes in my note taking app. Help me complete my train of thought here: ##${prompt}##`
+            content: `I am writing notes in my note taking app. Help me complete my train of thought here: ##${prompt}## Keep the tone of the text the same and keep it short.`
         }
     ],
     stream: true,
