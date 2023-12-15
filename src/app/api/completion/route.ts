@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     messages: [
         {
             role:'system',
-            content:'You are a helpful and smart AI in a note taking app that helps users complete their sentences. Only give them what would come after what they have written. Do not give them the beginning of their sentence.',
+            content:'You are a helpful and smart AI in a note taking app that helps users complete their notes.',
         },
         {
             role: 'user',
