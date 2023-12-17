@@ -38,7 +38,8 @@ Are you having trouble expanding on an idea or wording it? You can use AI to gen
 ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)
 * **Postgres:** Leveraged through Neondb, serving as the robust database solution for storing and managing note-related data efficiently.
-* **Tiptap:** Integrated for the text editor, enabling smooth text editing functionalities within the app.
+* [**Clerk:**](https://clerk.com/) Integrated Clerk for secure user authentication and management.
+* [**Tiptap:**](https://tiptap.dev/) Integrated for the text editor, enabling smooth text editing functionalities within the app.
 * **OpenAI API:** Utilized for both AI text autocomplete and AI-generated cover image features, enhancing note-taking and visual representation.
 * **Firebase:** Employed for downloading and storing images generated from DALL-E's temporary URLs, ensuring reliable image storage and retrieval.
 
