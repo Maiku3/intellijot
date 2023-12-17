@@ -58,10 +58,23 @@ Say goodbye to generic note covers! Our app leverages the power of the DALL-E AI
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+1. **Creating a Note:**
+    - Visit the dashboard.
+    - Click on "New Note" to create a new entry.
+    - Type in the title of your note and the AI will generate you a cover image.
+
+2. **Editing and Generating Text:**
+    - Start typing your note content in the text editor.
+    - Use the AI text autocomplete feature by pressing "Shift + A".
+
+3. **Saving and Accessing Notes:**
+    - Your note automatically saves after you finish typing.
+    - Access all your notes from the dashboard.
+  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Potential Future Features
-* Ability to add images to text editor / translate text to images with DALL-E
+* Ability to add images to the text editor / translate text to images with DALL-E
 * Folders to organize notes
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
