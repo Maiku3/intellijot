@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<a name="readme-top"></a>
 
-## Getting Started
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/Maiku3/intellijot">
+    <img src="IntelliJot_Logo.png" alt="Logo" width="80" height="80">
+  </a>
 
-First, run the development server:
+<h3 align="center">IntelliJot</h3>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+  <p align="center">
+    AI-Powered Note App
+    <br />
+    <a href="https://intellijot.vercel.app"><strong>intellijot.vercel.app</strong></a>
+    <br />
+    <br />
+  </p>
+</div>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+![](Screenshot_Home.png)
+![](Screenshot_Dashboard.png)
+Note-taking web app that uses the power of AI! Create a note and it will generate you an image for the cover based on the name of your note.
+Are you having trouble expanding on an idea or wording it? You can use AI to generate text with a click of a key!
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+### Built With
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![Next JS](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white) 
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+* Used Neondb for the Postgres database.
+* Tiptap library for the text editor.
+* OpenAI API for the text autocomplete and AI cover image features.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Deploy on Vercel
+## Features
+### AI Text Autocomplete
+### AI Image Generation for Note Cover
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<!-- USAGE EXAMPLES -->
+## Usage
