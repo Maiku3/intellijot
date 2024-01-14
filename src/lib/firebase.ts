@@ -6,12 +6,12 @@ import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
-  authDomain: "intellijot-e79f1.firebaseapp.com",
-  projectId: "intellijot-e79f1",
-  storageBucket: "intellijot-e79f1.appspot.com",
-  messagingSenderId: "135637335074",
-  appId: "1:135637335074:web:fcfb0f80d032da49f19e7b"
+    apiKey: process.env.FIREBASE_API_KEY,
+    authDomain: "intellijot-2060b.firebaseapp.com",
+    projectId: "intellijot-2060b",
+    storageBucket: "intellijot-2060b.appspot.com",
+    messagingSenderId: "885405262714",
+    appId: "1:885405262714:web:c5aff17cae0b3debcfacc3"
 };
 
 // Initialize Firebase
