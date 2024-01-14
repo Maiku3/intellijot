@@ -38,7 +38,8 @@ Are you having trouble expanding on an idea or wording it? You can use AI to gen
 ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)
 * **Postgres:** Leveraged through Neondb, serving as the robust database solution for storing and managing note-related data efficiently.
-* **Tiptap:** Integrated for the text editor, enabling smooth text editing functionalities within the app.
+* [**Clerk:**](https://clerk.com/) Integrated Clerk for secure user authentication and management.
+* [**Tiptap:**](https://tiptap.dev/) Integrated for the text editor, enabling smooth text editing functionalities within the app.
 * **OpenAI API:** Utilized for both AI text autocomplete and AI-generated cover image features, enhancing note-taking and visual representation.
 * **Firebase:** Employed for downloading and storing images generated from DALL-E's temporary URLs, ensuring reliable image storage and retrieval.
 
@@ -57,10 +58,23 @@ Say goodbye to generic note covers! Our app leverages the power of the DALL-E AI
 <!-- USAGE EXAMPLES -->
 ## Usage
 
+1. **Creating a Note:**
+    - Visit the dashboard.
+    - Click on "New Note" to create a new entry.
+    - Type in the title of your note and the AI will generate you a cover image.
+
+2. **Editing and Generating Text:**
+    - Start typing your note content in the text editor.
+    - Use the AI text autocomplete feature by pressing "Shift + A".
+
+3. **Saving and Accessing Notes:**
+    - Your note automatically saves after you finish typing.
+    - Access all your notes from the dashboard.
+  
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Potential Future Features
-* Ability to add images to text editor / translate text to images with DALL-E
+* Ability to add images to the text editor / translate text to images with DALL-E
 * Folders to organize notes
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
